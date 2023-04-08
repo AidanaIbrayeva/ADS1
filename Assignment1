@@ -18,30 +18,47 @@ private static int findMinRecursive(int[] arr, int i) {
 } 
 
 
+#2
+
+public static float avg(float[] arr) {
+    return avg(arr, 0, 0);
+}
+
+private static float avg(float[] arr, int i, float sum) {
+    if (i == arr.length) {
+        return sum / arr.length;
+    }
+    return avg(arr, i+1, sum + arr[i]);
+}
+
+
+#3
+
+
+public static boolean isPrime(int n) {
+    return isPrime(n, 2);
+}
+
+private static boolean isPrime(int n, int i) {
+    if (i == n) {
+        return true;
+    }
+    if (n % i == 0) {
+        return false;
+    }
+    return isPrime(n, i + 1);
+}
+
+
 #4
 
-import java.util.Scanner;
-class Factorl
-{ 
-	public static void main(String arg[])	
-	{
-	   long n;
-             	
-           Scanner sc=new Scanner(System.in);
-	   
-           n=sc.nextLong();
- 
-	   long f=Factorl.fact(n);
- 
-	   System.out.println(f);
-	}
- 
-	static long fact(long n)
-	 {
-	     if(n<=0)
-	      return 1;
-	      
-              return Factorl.fact(n-1)*n; 
-	}
-  	        	 
-}
+    public static int factorial(int n) {
+        if (n == 1) {
+            return n;
+        }
+        return n * factorial(n - 1);
+    }
+    
+    
+#5
+
