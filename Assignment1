@@ -59,6 +59,48 @@ private static boolean isPrime(int n, int i) {
         return n * factorial(n - 1);
     }
     
+
+#6
+
+    public static int power(int a, int n) {
+        if (n <= 1) {
+            return a;
+        }
+        return a * power(a, n - 1);
+    }
     
-#5
+    
+#7
+
+
+public static void permutation(String str) { 
+    permutation("", str); 
+}
+
+private static void permutation(String prefix, String str) {
+    int n = str.length();
+    if (n == 0) System.out.println(prefix);
+    else {
+        for (int i = 0; i < n; i++)
+            permutation(prefix + str.charAt(i), str.substring(0, i) + str.substring(i+1, n));
+    }
+} 
+
+
+#8
+
+public static boolean allDigitsString(String ex) {
+    return checkAllDigits(ex, 0);
+}
+
+public static boolean checkAllDigits(String ex, int index) {
+    if (index == ex.length()) {
+        return true;
+    }
+    if (!Character.isDigit(ex.charAt(index))) {
+        return false;
+    }
+    return checkAllDigits(ex, index + 1);
+}
+
 
